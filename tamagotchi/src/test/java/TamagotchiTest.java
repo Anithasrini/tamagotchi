@@ -36,4 +36,28 @@ public class TamagotchiTest {
     assertEquals(4, myTamagotchi.getFoodLevel());
   }
 
+  @Test
+  public void isAlive_foodLevelAbove0_true() {
+    Tamagotchi myTamagotchi = new Tamagotchi("1");
+    assertEquals(true, myTamagotchi.isAlive());
+  }
+
+  @Test
+  public void isAlive_foodLevelBelow0_false() {
+    Tamagotchi myTamagotchi = new Tamagotchi("0");
+    myTamagotchi.levelsStatus();
+    assertEquals(false, myTamagotchi.isAlive());
+  }
+
+  // @Test
+  // public void isFoodLevelFull_foodLevelAt10_true() {
+  //   Tamagotchi myTamagotchi = new Tamagotchi("10");
+  //   assertEquals(true, myTamagotchi.isFullFoodLevel());
+  // }
+  //
+  // @Test
+  // public void isFoodLevelFull_foodLevelAt10_false() {
+  //   Tamagotchi myTamagotchi = new Tamagotchi("9");
+  //   assertEquals(false, myTamagotchi.isFullFoodLevel());
+  // }
 }
