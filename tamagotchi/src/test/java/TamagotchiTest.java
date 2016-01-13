@@ -7,8 +7,6 @@ public class TamagotchiTest {
   public void tamagotchi_instantiatesCorrectly_lilDragon() {
     Tamagotchi myTamagotchi = new Tamagotchi("lil dragon");
     assertEquals("lil dragon", myTamagotchi.getName());
-    // assertEquals(10, myTamagotchi.getSleepLevel());
-    // assertEquals(10, myTamagotchi.getActivityLevel());
   }
 
   @Test
@@ -37,17 +35,32 @@ public class TamagotchiTest {
   }
 
   @Test
+  public void timePasses_sleepDecreasesByOne_4() {
+    Tamagotchi myTamagotchi = new Tamagotchi("1");
+    myTamagotchi.timePasses();
+    assertEquals(4, myTamagotchi.getSleepLevel());
+  }
+
+  @Test
+  public void timePasses_activityDecreasesByOne_4() {
+    Tamagotchi myTamagotchi = new Tamagotchi("1");
+    myTamagotchi.timePasses();
+    assertEquals(4, myTamagotchi.getActivityLevel());
+  }
+
+  @Test
   public void isAlive_foodLevelAbove0_true() {
     Tamagotchi myTamagotchi = new Tamagotchi("1");
     assertEquals(true, myTamagotchi.isAlive());
   }
 
   @Test
-  public void isAlive_foodLevelBelow0_false() {
-    Tamagotchi myTamagotchi = new Tamagotchi("0");
-    myTamagotchi.levelsStatus();
-    assertEquals(false, myTamagotchi.isAlive());
+  public void feedMeal_foodIncreasesByOne_6() {
+    Tamagotchi myTamagotchi = new Tamagotchi("1");
+    assertEquals(6, myTamagotchi.getFoodLevel());
   }
+
+
 
   // @Test
   // public void isFoodLevelFull_foodLevelAt10_true() {
@@ -60,4 +73,6 @@ public class TamagotchiTest {
   //   Tamagotchi myTamagotchi = new Tamagotchi("9");
   //   assertEquals(false, myTamagotchi.isFullFoodLevel());
   // }
+
+
 }
