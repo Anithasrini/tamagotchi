@@ -48,7 +48,9 @@ public class Tamagotchi {
   }
 
   public void feedMeal() {
-      mFoodLevel += 1;
+      while (!foodFull()) {
+        mFoodLevel += 1;
+      }
   }
 
   public void giveNap() {

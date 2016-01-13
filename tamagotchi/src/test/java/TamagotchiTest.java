@@ -56,8 +56,12 @@ public class TamagotchiTest {
 
   @Test
   public void feedMeal_foodIncreasesByOne_6() {
-    Tamagotchi myTamagotchi = new Tamagotchi("1");
-    assertEquals(6, myTamagotchi.getFoodLevel());
+    Tamagotchi myTamagotchi = new Tamagotchi("lil dragon");
+    myTamagotchi.feedMeal();
+    myTamagotchi.feedMeal();
+    myTamagotchi.feedMeal();
+    myTamagotchi.feedMeal();
+    assertEquals(9, myTamagotchi.getFoodLevel());
   }
 
 
